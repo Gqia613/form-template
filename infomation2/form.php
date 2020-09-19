@@ -60,6 +60,7 @@ if(isset($_POST['submit'])) {
 
 if(isset($_POST['submit'])) {
   if($count == 0) {
+    $_SESSION['success'] = 'success';
     header('Location: confirm.php');
   }
 }
