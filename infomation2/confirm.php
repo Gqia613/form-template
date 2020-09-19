@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if(! isset($_SESSION['success'])) {
+  header('Location: form.php');
+}
+
 $seName = $_SESSION['name'];
 $seTelephone = $_SESSION['telephone'];
 $seEmail = $_SESSION['email'];
@@ -197,7 +202,9 @@ $mail->Body = mb_convert_encoding(
   </section>
   <script>
   $('.sendBtn').click(function() {
-    $('.sendBtn').prop('disabled',false);
+    setTimeout(function(){
+        $('.sendBtn').prop('disabled', true);
+    }, 1);
   });
   </script>
   <script src="js/cmn.js"></script>
