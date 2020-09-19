@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if(! isset($_SESSION['success'])) {
+  header('Location: form.php');
+}
+
 session_destroy();
 ?>
 
